@@ -21,6 +21,7 @@
 
 ## 📝 Table of Contents
 - [About](#about)
+- [System Architecture](#architecture)
 - [Getting Started](#getting_started)
 - [Testing](#tests)
 - [Deployment](#deployment)
@@ -33,6 +34,12 @@
 
 ## 🧐 About <a name = "about"></a>
 Write about 1-2 paragraphs describing the purpose of your project.
+
+## 🏗 System Architecture <a name = "architecture"></a>
+<p align="center">
+  <a href="" rel="noopener">
+ <img src="https://raw.githubusercontent.com/toreylittlefield/quadrant-basic-test-challenge/main/Quadrant%20React%20Basic-Test.png" alt="Project Draw.io System Architecture"></a>
+</p>
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
