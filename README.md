@@ -36,9 +36,9 @@
 Write about 1-2 paragraphs describing the purpose of your project.
 
 ## 🏗 System Architecture <a name = "architecture"></a>
-<p align="center">
+<p align="left">
   <a href="" rel="noopener">
- <img height=400 src="https://raw.githubusercontent.com/toreylittlefield/quadrant-basic-test-challenge/main/Quadrant%20React%20Basic-Test.png" alt="Project Draw.io System Architecture"></a>
+ <img height=550 src="https://raw.githubusercontent.com/toreylittlefield/quadrant-basic-test-challenge/main/Quadrant%20React%20Basic-Test.png" alt="Project Draw.io System Architecture"></a>
 </p>
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
