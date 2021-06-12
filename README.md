@@ -3,3 +3,6 @@ Coding Challenge with React, Redux, Node, Express, Apollo GraphQL
 
 ## Technologies Used
 - React
+- Express
+- Apollo
+- GraphQL
