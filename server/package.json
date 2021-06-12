@@ -1,0 +1,29 @@
+{
+  "name": "express-graphql-server",
+  "version": "1.0.0",
+  "description": "Server running Express GraphQL and Apollo Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "test-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toreylittlefield/quadrant-basic-test-challenge.git"
+  },
+  "keywords": [
+    "server",
+    "node",
+    "express",
+    "graphql",
+    "apollo",
+    "challenge",
+    "quadrant",
+    "basic-test"
+  ],
+  "author": "Torey Littlefield",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toreylittlefield/quadrant-basic-test-challenge/issues"
+  },
+  "homepage": "https://github.com/toreylittlefield/quadrant-basic-test-challenge#readme"
+}
