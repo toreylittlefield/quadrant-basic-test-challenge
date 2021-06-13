@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/toreylittlefield/quadrant-basic-test-challenge/issues"
   },
-  "homepage": "https://github.com/toreylittlefield/quadrant-basic-test-challenge#readme"
+  "homepage": "https://github.com/toreylittlefield/quadrant-basic-test-challenge#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
