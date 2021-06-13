@@ -50,11 +50,20 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+System Requirements
+
+- npm v6.14.5+
+- Node.js v12.18+
+
+To check Node & npm versions run:
 
 ```
-Give examples
+npm -v
+node -v
 ```
+
+For installation & downloading Node.js & npm see:
+[Setup Node & npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 ### Installing
 
