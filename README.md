@@ -15,7 +15,7 @@
 
 ---
 
-<p align="center"> A practical challenge creating a basic form component in React with Node.js and GraphQL
+<p align="center"> A practical challenge creating a basic form component for a eCommerce CRM using React with Node.js and GraphQL
     <br>
 </p>
 
@@ -35,7 +35,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+This repo consists of a React Single Page Application that demonstrates a single client facing component for adding, editing, and deleting existing fashion items & listings in a larger eCommerce CRM. The backend is built with Node.js and runs an Express GraphQL server which queries & mutations item & listing data for the CRM.
 
 ## 🏗 System Architecture <a name = "architecture"></a>
 
