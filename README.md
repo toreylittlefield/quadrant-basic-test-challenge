@@ -21,6 +21,7 @@
 
 ## 📝 Table of Contents
 
+- [Quick Start](#quick-start)
 - [About](#about)
 - [System Architecture](#architecture)
 - [Getting Started](#getting_started)
@@ -32,6 +33,32 @@
 - [Acknowledgments](#acknowledgement)
   <!-- - [TODO](../TODO.md) -->
   <!-- - [Contributing](../CONTRIBUTING.md) -->
+
+## 💨 Quick Start <a name = "quick-start"></a>
+
+_Requires npm and node_
+
+###### Run:
+
+```
+git clone https://github.com/toreylittlefield/quadrant-basic-test-challenge.git
+```
+
+```
+cd quadrant-basic-test-challenge
+```
+
+```
+cd client
+npm install
+npm start
+```
+
+```
+cd server
+npm install
+npm start
+```
 
 ## 🧐 About <a name = "about"></a>
 
