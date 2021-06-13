@@ -69,6 +69,18 @@ For installation & downloading Node.js & npm see:
 
 Local Development Installation Instructions Are As Follows
 
+- Clone the repo:
+
+```
+git clone https://github.com/toreylittlefield/quadrant-basic-test-challenge.git
+```
+
+- Open the directory
+
+```
+cd quadrant-basic-test-challenge
+```
+
 ##### Client (Frontend)
 
 To run the React App client on port 3000
