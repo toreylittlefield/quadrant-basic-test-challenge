@@ -40,7 +40,7 @@ Write about 1-2 paragraphs describing the purpose of your project.
 ## 🏗 System Architecture <a name = "architecture"></a>
 
 <p align="left">
-  <a href="" rel="noopener">
+  <a href="https://github.com/toreylittlefield/quadrant-basic-test-challenge/tree/main/project-files" rel="noopener">
  <img height=550 src="https://raw.githubusercontent.com/toreylittlefield/quadrant-basic-test-challenge/main/project-files/Quadrant%20React%20Basic-Test.png" alt="Project Draw.io System Architecture"></a>
 </p>
 
