@@ -107,7 +107,7 @@ npm install
 npm start
 ```
 
-Then open the Express GraphQL server @ http://localhost:4000/
+Optional: run the Express GraphQL server playground @ http://localhost:4000/graphql
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
