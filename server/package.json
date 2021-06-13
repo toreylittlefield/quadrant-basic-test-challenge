@@ -28,5 +28,9 @@
   "homepage": "https://github.com/toreylittlefield/quadrant-basic-test-challenge#readme",
   "devDependencies": {
     "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.25.1",
+    "graphql": "^15.5.0"
   }
 }
