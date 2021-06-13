@@ -67,21 +67,35 @@ For installation & downloading Node.js & npm see:
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
+Local Development Installation Instructions Are As Follows
 
-Say what the step will be
+##### Client (Frontend)
 
-```
-Give the example
-```
+To run the React App client on port 3000
 
-And repeat
+- Open the terminal at the root project directory & run
 
 ```
-until finished
+cd client
+npm install
+npm start
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
+Then open the developer React server @ http://localhost:3000/
+
+##### Express GraphQL Server (Backend)
+
+To run the Express GraphQL Server on port 4000
+
+- Open the terminal at the root project directory & run
+
+```
+cd server
+npm install
+npm start
+```
+
+Then open the Express GraphQL server @ http://localhost:4000/
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
