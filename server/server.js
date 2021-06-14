@@ -23,6 +23,7 @@ const { ApolloServer, gql } = require("apollo-server-express");
   server.applyMiddleware({ app });
 
   await new Promise((resolve) => app.listen({ port: 4000 }, resolve));
+  // eslint-disable-next-line no-console
   console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
   return { server, app };
 })();
