@@ -14,19 +14,19 @@ function FileUploadSVG() {
         id="Screen Shot 2021-02-05 at 11.11 1"
         width="136"
         height="137"
-        fill="url(#pattern0)"
+        fill="url(#fileupload)"
       />
       <defs>
         <pattern
-          id="pattern0"
+          id="fileupload"
           patternContentUnits="objectBoundingBox"
           width="1"
           height="1"
         >
-          <use xlinkHref="#image0" transform="scale(0.00367647)" />
+          <use xlinkHref="#imagefileupload" transform="scale(0.00367647)" />
         </pattern>
         <image
-          id="image0"
+          id="imagefileupload"
           data-name="Screen Shot 2021-02-05 at 11.11.png"
           width="272"
           height="274"
