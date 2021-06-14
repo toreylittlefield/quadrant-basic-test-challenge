@@ -93,6 +93,10 @@ This repo consists of a React Single Page Application that demonstrates a single
 | | ├── queries.js
 | | └── mutations.js
 | |
+| ├── assets/ <-- Icons/Images
+| | ├── images/...
+| | └── icons/...
+| |
 | └── __tests__/ <- Our Client Tests
 |  ├── ...test.js
 |  └── App.test.js
