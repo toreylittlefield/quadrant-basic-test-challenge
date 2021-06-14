@@ -4,6 +4,7 @@ import {
   GlobeIconSVG,
   FileUploadSVG,
   LibraryIconSVG,
+  GridButtonIconSVG,
 } from "./assets/icons/index";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       </header>
       <FileUploadSVG />
       <LibraryIconSVG />
+      <GridButtonIconSVG />
     </div>
   );
 }
