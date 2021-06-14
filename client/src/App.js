@@ -7,6 +7,8 @@ import {
   GridButtonIconSVG,
 } from "./assets/icons/index";
 
+import CroppedBootCutJeans from "./assets/images/Cropped Boot Cut Jeans 1 1.png";
+
 function App() {
   return (
     <div className="App">
@@ -17,6 +19,7 @@ function App() {
       <FileUploadSVG />
       <LibraryIconSVG />
       <GridButtonIconSVG />
+      <img alt="Cropped Boot Cut Jeans" src={CroppedBootCutJeans} />
     </div>
   );
 }
