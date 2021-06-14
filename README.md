@@ -89,9 +89,13 @@ This repo consists of a React Single Page Application that demonstrates a single
 | ├── screens/
 | |  └── MainPage.js <- Only Page View
 | |
-| ├── Apollo/ <-- Apollo GraphQL services
-|   ├── queries.js
-|   └── mutations.js
+| ├── Apollo/ <-- Apollo GraphQL Services
+| | ├── queries.js
+| | └── mutations.js
+| |
+| └── __tests__/ <- Our Client Tests
+|  ├── ...test.js
+|  └── App.test.js
 |
 ├── App.js <- React App & Apollo Client Instance
 └── public/
