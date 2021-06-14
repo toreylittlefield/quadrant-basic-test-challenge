@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
+    "lint": "./node_modules/.bin/eslint server.js",
     "test": "test-server"
   },
   "repository": {
@@ -40,6 +41,7 @@
   },
   "dependencies": {
     "apollo-server-express": "^2.25.1",
+    "express": "^4.17.1",
     "graphql": "^15.5.0"
   }
 }
