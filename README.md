@@ -24,6 +24,7 @@
 - [Quick Start](#quick-start)
 - [About](#about)
 - [System Architecture](#architecture)
+- [File Structure](#file-structure)
 - [Getting Started](#getting_started)
 - [Testing](#tests)
 - [Deployment](#deployment)
@@ -70,6 +71,32 @@ This repo consists of a React Single Page Application that demonstrates a single
   <a href="https://github.com/toreylittlefield/quadrant-basic-test-challenge/tree/main/project-files" rel="noopener">
  <img height=550 src="https://raw.githubusercontent.com/toreylittlefield/quadrant-basic-test-challenge/main/project-files/Quadrant%20React%20Basic-Test.png" alt="Project Draw.io System Architecture"></a>
 </p>
+
+## 📁 File Structure <a name = "file-structure"></a>
+
+#### Frontend
+
+```
+├ client/
+├── src/
+| ├── components/
+| | ├── Buttons/...
+| | ├── ImageLoader/...
+| | ├── Inputs/...
+| | ├── Navs/...
+| | └── index.js // <- All Components
+| |
+| ├── screens/
+| |  └── MainPage.js <- Only Page View
+| |
+| ├── Apollo/ <-- Apollo GraphQL services
+|   ├── queries.js
+|   └── mutations.js
+|
+├── App.js <- React App & Apollo Client Instance
+└── public/
+  └── index.html
+```
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
