@@ -1,6 +1,10 @@
 import React from "react";
 
-import { GlobeIconSVG, FileUploadSVG } from "./assets/icons/index";
+import {
+  GlobeIconSVG,
+  FileUploadSVG,
+  LibraryIconSVG,
+} from "./assets/icons/index";
 
 function App() {
   return (
@@ -10,6 +14,7 @@ function App() {
         Hello World!
       </header>
       <FileUploadSVG />
+      <LibraryIconSVG />
     </div>
   );
 }
