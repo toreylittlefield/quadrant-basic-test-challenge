@@ -170,7 +170,7 @@ Add additional notes about how to deploy this on a live system.
 
 - [Styled Components](https://styled-components.com/) - CSS-in-JS Styling Library
 - [Material UI](https://material-ui.com/) - React Component Library
-- [React](https://reactjs.org/) - UI Library
+- [React](https://reactjs.org/) - UI JS Library -> _Created with [create-react-app](https://github.com/facebookincubator/create-react-app)_
 - [Apollo Client](https://www.apollographql.com/docs/react) - State | Store Management For GraphQL
 - **Optional** --- [Redux-Toolkit](https://redux-toolkit.js.org/) - State | Store Management
 
