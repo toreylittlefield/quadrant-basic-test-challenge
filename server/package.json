@@ -28,7 +28,15 @@
   },
   "homepage": "https://github.com/toreylittlefield/quadrant-basic-test-challenge#readme",
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.1"
   },
   "dependencies": {
     "apollo-server-express": "^2.25.1",
