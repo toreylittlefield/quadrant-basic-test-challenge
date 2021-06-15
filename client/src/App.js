@@ -1,4 +1,6 @@
 import React from "react";
+// import { ThemeProvider } from "styled-components";
+import GlobalStyles from "ui/globalstyles";
 
 import {
   GlobeIconSVG,
@@ -12,10 +14,9 @@ import CroppedBootCutJeans from "assets/images/Cropped Boot Cut Jeans 1 1.png";
 function App() {
   return (
     <div className="App">
+      <GlobalStyles />
       <GlobeIconSVG />
-      <header style={{ color: "blue" }} className="App-header">
-        Hello World!
-      </header>
+      <header className="App-header">Hello World!</header>
       <FileUploadSVG />
       <LibraryIconSVG />
       <GridButtonIconSVG />
