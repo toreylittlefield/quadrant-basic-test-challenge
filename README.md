@@ -86,6 +86,13 @@ This repo consists of a React Single Page Application that demonstrates a single
 | | ├── Navs/...
 | | └── index.js // <- All Styled Components
 | |
+| ├── utils/
+| |  └── ... <- All Utilities
+| |
+| ├── ui/
+| | ├── globalstyles.js <- For Global themeing
+| | └── ...
+| |
 | ├── screens/
 | |  └── MainPage.js <- Only Page View
 | |
