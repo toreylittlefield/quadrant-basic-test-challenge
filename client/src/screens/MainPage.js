@@ -10,14 +10,13 @@ import {
 import CroppedBootCutJeans from "assets/images/Cropped Boot Cut Jeans 1 1.png";
 
 const MainPage = () => (
-  <body>
+  <div>
     <GlobeIconSVG />
-    <header className="App-header">Hello World!</header>
     <FileUploadSVG />
     <LibraryIconSVG />
     <GridButtonIconSVG />
     <img alt="Cropped Boot Cut Jeans" src={CroppedBootCutJeans} />
-  </body>
+  </div>
 );
 
 export default MainPage;

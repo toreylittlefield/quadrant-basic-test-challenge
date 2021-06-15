@@ -4,10 +4,10 @@ import GlobalStyles from "ui/globalstyles";
 import MainPage from "screens/MainPage";
 
 const App = () => (
-  <div className="App">
+  <main className="App">
     <GlobalStyles />
     <MainPage />
-  </div>
+  </main>
 );
 
 export default App;
