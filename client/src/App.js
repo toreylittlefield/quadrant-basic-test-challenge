@@ -5,9 +5,9 @@ import {
   FileUploadSVG,
   LibraryIconSVG,
   GridButtonIconSVG,
-} from "./assets/icons/index";
+} from "assets/icons";
 
-import CroppedBootCutJeans from "./assets/images/Cropped Boot Cut Jeans 1 1.png";
+import CroppedBootCutJeans from "assets/images/Cropped Boot Cut Jeans 1 1.png";
 
 function App() {
   return (
