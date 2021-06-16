@@ -12,7 +12,8 @@ const GlobalStyles = createGlobalStyle`
   }
   :root {
     // mobile
-    font-size: ${responsive(24)};
+    /* font-size: ${responsive(24)}; */
+    font-size: 22px;
     font-family: 'Montserrat-Regular';
     background-color: #FFFFFF;
 
@@ -24,11 +25,11 @@ const GlobalStyles = createGlobalStyle`
     
     // tablet
     @media (min-width: 768px) {
-      font-size: ${responsive(18)};
+      font-size: 18px
     }
     // desktop
     @media (min-width: 1024px) {
-      font-size: ${responsive(16)};
+      font-size: 16px;
 
       // gutters needed?
       /* padding-left: 55px; */
