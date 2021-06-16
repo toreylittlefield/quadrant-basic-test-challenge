@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { GlobeIconSVG, GridButtonIconSVG, LibraryIconSVG } from "assets/icons";
+import { v4 as uuidv4 } from "uuid";
 import useWindowSize from "utils/useWindowSize";
 import useHideComponent from "utils/useHideComponent";
-import { v4 as uuidv4 } from "uuid";
+import { GlobeIconSVG, GridButtonIconSVG, LibraryIconSVG } from "assets/icons";
 import GridItemNav from "./GridItemNav";
 import ExpandableSubNav from "./ExpandableSubNav";
 import LinkNav from "./LinkNav";
@@ -14,7 +14,7 @@ const SideNav = styled.nav`
   max-width: 250px;
   // tablet
   @media (min-width: 768px) {
-    grid-column: 1 / span 4;
+    grid-column: 1 / span 6;
   }
   // desktop
   @media (min-width: 1024px) {
@@ -37,15 +37,12 @@ const MainSideNav = styled.nav`
  * @returns SideNav Component
  */
 const MainNav = () => {
-  const {
-    navRowsArray,
-    windowSize: { width },
-  } = useWindowSize();
+  const { navRowsArray } = useWindowSize();
   const [hideComponent, handleHideComponent] = useHideComponent(true);
   return (
     <SideNav>
       {/* Always present sidebar nav */}
-      <MainSideNav width={width} onClick={handleHideComponent}>
+      <MainSideNav onClick={handleHideComponent}>
         <GridItemNav key={uuidv4()} />
         <GridItemNav key={uuidv4()}>
           <LinkNav href="/#Home">
