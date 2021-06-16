@@ -1,7 +1,8 @@
-import { React, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { GlobeIconSVG, GridButtonIconSVG, LibraryIconSVG } from "assets/icons";
 import useWindowSize from "utils/useWindowSize";
+import useHideComponent from "utils/useHideComponent";
 import { v4 as uuidv4 } from "uuid";
 import GridItemNav from "./GridItemNav";
 import ExpandableSubNav from "./ExpandableSubNav";
@@ -41,11 +42,7 @@ const MainNav = () => {
     navRowsArray,
     windowSize: { width },
   } = useWindowSize();
-  const [hideComponent, setHideComponent] = useState(true);
-
-  function handleHideComponent() {
-    setHideComponent(!hideComponent);
-  }
+  const [hideComponent, handleHideComponent] = useHideComponent(true);
   return (
     <SideNav>
       {/* Always present sidebar nav */}
