@@ -17,7 +17,10 @@ const MainSideNav = styled.nav`
   grid-auto-columns: 50px;
   background-color: ${(props) => props.theme.bgColorDark};
   display: grid;
-  grid-template-rows: repeat(18, [row-start-main-nav] 50px);
+  /* grid-template-rows: repeat(18, [row-start-main-nav] 50px);
+   */
+  /* grid-template-rows: minmax(50px auto); */
+  grid-auto-rows: 50px;
 `;
 
 const GridItemNav = styled.li`
