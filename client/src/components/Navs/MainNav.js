@@ -12,16 +12,13 @@ const SideNav = styled.nav`
   grid-row: 1 / span all;
   grid-column: 1 / span 8;
   max-width: 250px;
+  // tablet
   @media (min-width: 768px) {
     grid-column: 1 / span 4;
   }
   // desktop
   @media (min-width: 1024px) {
     grid-column: 1 / span 2;
-
-    // gutters needed?
-    /* padding-left: 55px; */
-    /* padding-right: 55px; */
   }
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
@@ -29,14 +26,16 @@ const SideNav = styled.nav`
 `;
 
 const MainSideNav = styled.nav`
-  /* grid-column: 1 / 4; */
-  /* grid-template-rows: repeat(18, [row-start-main-nav] 50px);*/
   grid-auto-columns: 50px;
   background-color: ${(props) => props.theme.bgColorDark};
   display: grid;
   grid-auto-rows: 50px;
 `;
 
+/**
+ * This is the Side Navigation Bar according to Figma Specs
+ * @returns SideNav Component
+ */
 const MainNav = () => {
   const {
     navRowsArray,
