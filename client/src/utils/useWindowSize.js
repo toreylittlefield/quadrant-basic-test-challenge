@@ -13,16 +13,16 @@ export default function useWindowSize() {
 
   function changeWindowSize() {
     setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+    setNavRowsArray(Array(Math.ceil(window.innerHeight / 50) - 2).fill(0));
   }
 
   React.useEffect(() => {
     window.addEventListener("resize", changeWindowSize);
-    setNavRowsArray(Array(Math.ceil(windowSize.height / 50) - 2).fill(0));
 
     return () => {
       window.removeEventListener("resize", changeWindowSize);
     };
-  }, [windowSize]);
+  }, []);
 
   return { windowSize, navRowsArray };
 }
