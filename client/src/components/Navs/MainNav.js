@@ -14,12 +14,10 @@ const SideNav = styled.nav`
 
 const MainSideNav = styled.nav`
   /* grid-column: 1 / 4; */
+  /* grid-template-rows: repeat(18, [row-start-main-nav] 50px);*/
   grid-auto-columns: 50px;
   background-color: ${(props) => props.theme.bgColorDark};
   display: grid;
-  /* grid-template-rows: repeat(18, [row-start-main-nav] 50px);
-   */
-  /* grid-template-rows: minmax(50px auto); */
   grid-auto-rows: 50px;
 `;
 
@@ -28,11 +26,14 @@ const GridItemNav = styled.li`
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid ${(props) => props.theme.dividersColor};
+  cursor: ${({ theme, children }) =>
+    React.Children.count(children) === 1 ? theme.isLink.cursor : "auto"};
 `;
 
 const SubNav = styled.nav`
   background-color: ${(props) => props.theme.bgColorLight};
-  grid-column: 4 / span all;
+  /* grid-column: 4 / span all; */
+  grid-column: 2 / span all;
   text-align: center;
 `;
 
@@ -41,21 +42,24 @@ const MainNav = () => {
 
   return (
     <SideNav>
+      {/* Always present sidebar nav */}
       <MainSideNav>
         <GridItemNav key={uuidv4()} />
-        <GridItemNav key={uuidv4()}>
+        <GridItemNav isLink key={uuidv4()}>
           <GlobeIconSVG />
         </GridItemNav>
-        <GridItemNav key={uuidv4()}>
+        <GridItemNav isLink key={uuidv4()}>
           <GridButtonIconSVG />
         </GridItemNav>
-        <GridItemNav key={uuidv4()}>
+        <GridItemNav isLink key={uuidv4()}>
           <LibraryIconSVG />
         </GridItemNav>
+        {/* create empty rows with borders */}
         {navRowsArray.map(() => (
           <GridItemNav key={uuidv4()} />
         ))}
       </MainSideNav>
+      {/* Expandable Sub Nav */}
       <SubNav>Expanded Nav</SubNav>
     </SideNav>
   );
