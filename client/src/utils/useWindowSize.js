@@ -17,7 +17,7 @@ export default function useWindowSize() {
 
   React.useEffect(() => {
     window.addEventListener("resize", changeWindowSize);
-    setNavRowsArray(Array(Math.ceil(windowSize.height / 50) + 1).fill(0));
+    setNavRowsArray(Array(Math.ceil(windowSize.height / 50) - 2).fill(0));
 
     return () => {
       window.removeEventListener("resize", changeWindowSize);
