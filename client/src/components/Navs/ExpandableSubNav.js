@@ -7,14 +7,14 @@ import GridItemNav from "./GridItemNav";
 import LinkNav from "./LinkNav";
 
 const SubNav = styled.nav`
-  grid-column: 2 / span all;
+  grid-column-start: 2 / span all;
   background-color: ${(props) => props.theme.bgColorLight};
   grid-auto-rows: 50px;
   z-index: 1;
   overflow-x: hidden;
   transition: 0.75s;
   display: grid;
-  ${(props) => (props.hideComponent ? `width: 0%` : `width: 100%`)};
+  ${(props) => (props.hideComponent ? `width: 0%` : `width: max(150px, 100%)`)};
 `;
 
 const TextSpan = styled.span`
