@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { GlobeIconSVG } from "assets/icons";
 import useWindowSize from "utils/useWindowSize";
+import { v4 as uuidv4 } from "uuid";
 
 const SideNav = styled.nav`
   grid-row: 1 / span all;
@@ -40,11 +41,11 @@ const MainNav = () => {
       <MainSideNav>
         {navRowsArray.map((_, idx) =>
           idx === 1 ? (
-            <GridItemNav>
+            <GridItemNav key={uuidv4()}>
               <GlobeIconSVG />
             </GridItemNav>
           ) : (
-            <GridItemNav />
+            <GridItemNav key={uuidv4()} />
           )
         )}
       </MainSideNav>
