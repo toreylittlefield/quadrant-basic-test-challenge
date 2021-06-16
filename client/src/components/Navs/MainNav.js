@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { GlobeIconSVG } from "assets/icons";
+import useWindowSize from "utils/useWindowSize";
 
 const SideNav = styled.nav`
   grid-row: 1 / span all;
@@ -18,7 +19,7 @@ const MainSideNav = styled.nav`
   grid-template-rows: repeat(18, [row-start-main-nav] 50px);
 `;
 
-const GridItemNav = styled.div`
+const GridItemNav = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,24 +32,25 @@ const SubNav = styled.nav`
   text-align: center;
 `;
 
-// eslint-disable-next-line prefer-const
-const arrayGridItems = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const MainNav = () => {
+  const { navRowsArray } = useWindowSize();
 
-const MainNav = () => (
-  <SideNav>
-    <MainSideNav>
-      {arrayGridItems.map((_, idx) =>
-        idx === 1 ? (
-          <GridItemNav>
-            <GlobeIconSVG />
-          </GridItemNav>
-        ) : (
-          <GridItemNav />
-        )
-      )}
-    </MainSideNav>
-    <SubNav>Expanded Nav</SubNav>
-  </SideNav>
-);
+  return (
+    <SideNav>
+      <MainSideNav>
+        {navRowsArray.map((_, idx) =>
+          idx === 1 ? (
+            <GridItemNav>
+              <GlobeIconSVG />
+            </GridItemNav>
+          ) : (
+            <GridItemNav />
+          )
+        )}
+      </MainSideNav>
+      <SubNav>Expanded Nav</SubNav>
+    </SideNav>
+  );
+};
 
 export default MainNav;
