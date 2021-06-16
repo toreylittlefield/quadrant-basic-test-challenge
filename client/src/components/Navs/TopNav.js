@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 /**
- * Component for the top of the ink-list in the side bar
+ * Component for the top navigation as per Figma specs
  */
 const TopNav = styled.nav`
   grid-row: 1 / span 1;
