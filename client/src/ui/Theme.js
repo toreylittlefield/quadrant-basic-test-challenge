@@ -6,6 +6,10 @@ const theme = {
   bgColorDark: "#333333",
   bgColorLight: "#E6E6E6",
   dividersColor: "#C6C6C6",
+  isLink: {
+    cursor: "pointer",
+    "text-decoration": "none",
+  },
 };
 
 const Theme = ({ children }) => (
