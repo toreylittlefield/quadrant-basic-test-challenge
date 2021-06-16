@@ -7,7 +7,7 @@ const MainPage = () => (
   <Theme>
     <Grid>
       <TopNav>Option Attributes</TopNav>
-      <MainNav bgColorDark bgColorLight dividersColor>
+      <MainNav bgColorDark bgColorDarkHover bgColorLight dividersColor>
         Main Nav
       </MainNav>
       <SubNav bgColorLight>Sub Nav</SubNav>
