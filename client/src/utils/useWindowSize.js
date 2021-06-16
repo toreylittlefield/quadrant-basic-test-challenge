@@ -9,15 +9,20 @@ export default function useWindowSize() {
     width: isSSR ? 1200 : window.innerWidth,
     height: isSSR ? 800 : window.innerHeight,
   });
-  const [navRowsArray, setNavRowsArray] = React.useState([0, 0, 0, 0]);
+
+  function getArrayCells() {
+    return Array(Math.ceil(Math.max(window.innerHeight, 900) / 50) - 2).fill(0);
+  }
+
+  const [navRowsArray, setNavRowsArray] = React.useState([getArrayCells]);
 
   function changeWindowSize() {
     setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-    setNavRowsArray(Array(Math.ceil(window.innerHeight / 50) - 2).fill(0));
   }
 
   React.useEffect(() => {
     window.addEventListener("resize", changeWindowSize);
+    setNavRowsArray(getArrayCells);
 
     return () => {
       window.removeEventListener("resize", changeWindowSize);
