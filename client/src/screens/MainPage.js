@@ -7,7 +7,8 @@ import {
   MainNav,
   SubNav,
   MainImage,
-  Container,
+  GridContainer,
+  FlexContainer,
 } from "components";
 
 /**
@@ -21,18 +22,12 @@ const MainPage = () => (
       <MainNav bgColorDark bgColorDarkHover bgColorLight dividersColor>
         Main Nav
       </MainNav>
-      <Container>
+      <GridContainer>
         <MainImage />
-        <SubNav bgColorLight>
-          Sub Nav
-          <ul>
-            <li>Classification</li>
-            <li>Commercial</li>
-            <li>Notes</li>
-            <li>Links</li>
-          </ul>
-        </SubNav>
-      </Container>
+        <FlexContainer>
+          <SubNav bgColorLight />
+        </FlexContainer>
+      </GridContainer>
     </Grid>
   </Theme>
 );
