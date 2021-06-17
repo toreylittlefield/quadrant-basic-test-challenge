@@ -3,18 +3,26 @@ import styled from "styled-components";
 const Grid = styled.div`
   min-height: 900px;
   display: grid;
-  grid-template-columns: repeat(12, [col] 1fr);
-  /* grid-template-rows: repeat(12, [row] 50px); */
-  /* grid-template-rows: repeat(12, [row] 1fr); */
+  max-width: 1440px;
   grid-template-rows: 80px;
   column-gap: 20px;
+  grid-template-columns: 0.4fr 1fr 1fr;
+
+  // desktop
+  @media (max-width: 1024px) {
+    grid-template-columns: 0.7fr 1fr 1fr;
+
+    // gutters needed?
+    /* padding-left: 55px; */
+    /* padding-right: 55px; */
+  }
   // tablet
   @media (max-width: 768px) {
-    /* column-count: 6; */
+    grid-template-columns: 0.7fr 1fr 1fr;
   }
-  // desktop
+  // mobile
   @media (max-width: 451px) {
-    /* column-count: 1; */
+    grid-template-columns: 0.3fr 1fr;
   }
 `;
 
