@@ -10,11 +10,11 @@ import LinkNav from "./LinkNav";
 
 const SideNav = styled.nav`
   grid-row: 1 / span all;
-  grid-column: 1 / span 8;
+  grid-column: 1 / span 1;
   max-width: 250px;
   // tablet
   @media (min-width: 768px) {
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 2;
   }
   // desktop
   @media (min-width: 1024px) {
