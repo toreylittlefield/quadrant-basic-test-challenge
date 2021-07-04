@@ -5,11 +5,11 @@ import LinkNav from "./LinkNav";
 const hideTransition = `
   visibility: hidden;
   opacity: 0;
-  transform: translate(0px, -10px);
+  transform: translate(0px, 20px);
   max-width: 0;
   position: absolute;
   height: 0;
-  transition: visibility 100ms ease 0s, opacity 0s;
+  transition: visibility 50ms ease 0s, opacity 0s;
 `;
 
 const showTransition = `
