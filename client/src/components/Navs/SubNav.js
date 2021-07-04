@@ -37,6 +37,7 @@ const TabItem = styled.button`
   border: 0;
   padding: 0;
   margin: 0;
+  ${(props) => (props.activeButton ? props.theme.isActive : "")}
 
   @media (max-width: 1024px) {
     min-width: 35%;
@@ -47,10 +48,8 @@ const TabItem = styled.button`
     width: 49%;
   }
   @media (max-width: 500px) {
-    border: 0.1px solid rgba(0, 0, 0, 0.05);
     width: 100%;
   }
-  ${(props) => (props.activeButton ? props.theme.isActive : "")}
 `;
 
 const buttonItems = ["Classification", "Commercial", "Notes", "Links"];
