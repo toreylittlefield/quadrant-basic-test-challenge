@@ -3,17 +3,20 @@ import styled from "styled-components";
 import LinkNav from "./LinkNav";
 
 const hideTransition = `
-visibility: hidden;
-opacity: 0;
-position: absolute;
-width: 0;
-transition: visibility 0s linear 300ms, opacity 0ms;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(0px, -10px);
+  max-width: 0;
+  position: absolute;
+  height: 0;
+  transition: visibility 100ms ease 0s, opacity 0s;
 `;
 
 const showTransition = `
-visibility: visible;
-opacity: 1;
-transition: visibility 0s linear 0s, opacity 300ms;
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0px, 0px);
+  transition: all 350ms ease 0ms, opacity 150ms;
 `;
 
 const SubNavStyles = styled.div`
@@ -77,6 +80,7 @@ const SubNav = () => {
     <SubNavStyles>
       {buttonItems.map((buttonItem, idx) => (
         <TabItem
+          key={buttonItem}
           onClick={() => {
             setActiveButton(idx);
             setToggleClick(!toggleClick);
