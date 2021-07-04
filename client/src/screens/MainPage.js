@@ -19,15 +19,19 @@ const MainPage = () => (
   <Theme>
     <Grid>
       <TopNav>Option Attributes</TopNav>
-      <MainNav bgColorDark bgColorDarkHover bgColorLight dividersColor>
-        Main Nav
-      </MainNav>
+      {/* The sidebar is MainNav */}
+      <MainNav bgColorDark bgColorDarkHover bgColorLight dividersColor />
+      {/* End sidebar  */}
+
+      {/* Main */}
       <GridContainer>
         <MainImage />
         <FlexContainer>
+          {/* Classification, Commerical... buttons */}
           <SubNav bgColorLight />
         </FlexContainer>
       </GridContainer>
+      {/* End Main */}
     </Grid>
   </Theme>
 );
