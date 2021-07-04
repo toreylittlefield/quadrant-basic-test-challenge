@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import LinkNav from "./LinkNav";
 
@@ -28,49 +28,49 @@ const SubNavStyles = styled.div`
   }
 `;
 
-const TabItem = styled.li`
+const TabItem = styled.button`
   height: 48px;
   list-style-type: none;
   width: 100%;
-  border: 0.1px solid rgba(0, 0, 0, 0.05);
   background-color: ${(props) => props.theme.bgColorLight};
   place-content: baseline;
+  border: 0;
+  padding: 0;
+  margin: 0;
 
   @media (max-width: 1024px) {
     min-width: 35%;
     width: calc(max(49%, 150px));
+    margin-bottom: 15px;
   }
   @media (max-width: 768px) {
     width: 49%;
   }
-  @media (max-width: 451px) {
+  @media (max-width: 500px) {
+    border: 0.1px solid rgba(0, 0, 0, 0.05);
     width: 100%;
   }
+  ${(props) => (props.activeButton ? props.theme.isActive : "")}
 `;
 
-const SubNav = () => (
-  <SubNavStyles>
-    <TabItem>
-      <LinkNav Dark href="#Classification">
-        <span>Classification</span>
-      </LinkNav>
-    </TabItem>
-    <TabItem>
-      <LinkNav Dark href="#Commercial">
-        <span>Commercial</span>
-      </LinkNav>
-    </TabItem>
-    <TabItem>
-      <LinkNav Dark href="#Notes">
-        <span>Notes</span>
-      </LinkNav>
-    </TabItem>
-    <TabItem>
-      <LinkNav Dark href="#Links">
-        <span>Links</span>
-      </LinkNav>
-    </TabItem>
-  </SubNavStyles>
-);
+const buttonItems = ["Classification", "Commercial", "Notes", "Links"];
+
+const SubNav = () => {
+  const [activeButton, setActiveButton] = useState(0);
+  return (
+    <SubNavStyles>
+      {buttonItems.map((buttonItem, idx) => (
+        <TabItem
+          onClick={() => setActiveButton(idx)}
+          activeButton={activeButton === idx}
+        >
+          <LinkNav Dark href={`#${buttonItem}`}>
+            <span>{buttonItem}</span>
+          </LinkNav>
+        </TabItem>
+      ))}
+    </SubNavStyles>
+  );
+};
 
 export default SubNav;

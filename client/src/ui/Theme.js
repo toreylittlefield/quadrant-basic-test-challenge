@@ -16,6 +16,9 @@ const theme = {
       transform: scale(1);
       opacity: 0;
     }`,
+  isActive: `
+    border-bottom: 2px solid #03A9F4;
+  `,
 };
 
 const Theme = ({ children }) => (
