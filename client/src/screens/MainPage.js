@@ -1,22 +1,39 @@
 import React from "react";
+import { Theme } from "ui/Theme";
 
 import {
-  GlobeIconSVG,
-  FileUploadSVG,
-  LibraryIconSVG,
-  GridButtonIconSVG,
-} from "assets/icons";
+  Grid,
+  TopNav,
+  MainNav,
+  SubNav,
+  MainImage,
+  GridContainer,
+  FlexContainer,
+} from "components";
 
-import CroppedBootCutJeans from "assets/images/Cropped Boot Cut Jeans 1 1.png";
-
+/**
+ * This is the Main Page "Screen / View" with all parent components rendered here
+ * @returns MainPage component
+ */
 const MainPage = () => (
-  <div>
-    <GlobeIconSVG />
-    <FileUploadSVG />
-    <LibraryIconSVG />
-    <GridButtonIconSVG />
-    <img alt="Cropped Boot Cut Jeans" src={CroppedBootCutJeans} />
-  </div>
+  <Theme>
+    <Grid>
+      <TopNav>Option Attributes</TopNav>
+      {/* The sidebar is MainNav */}
+      <MainNav bgColorDark bgColorDarkHover bgColorLight dividersColor />
+      {/* End sidebar  */}
+
+      {/* Main */}
+      <GridContainer>
+        <MainImage />
+        <FlexContainer>
+          {/* Classification, Commerical... buttons */}
+          <SubNav bgColorLight />
+        </FlexContainer>
+      </GridContainer>
+      {/* End Main */}
+    </Grid>
+  </Theme>
 );
 
 export default MainPage;

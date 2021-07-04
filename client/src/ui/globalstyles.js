@@ -12,19 +12,30 @@ const GlobalStyles = createGlobalStyle`
   }
   :root {
     // mobile
-    font-size: ${responsive(24)};
+    /* font-size: ${responsive(24)}; */
+    font-size: 22px;
     font-family: 'Montserrat-Regular';
-    
-      // tablet
-      @media (min-width: 768px) {
-        font-size: ${responsive(18)};
-      }
+    background-color: #FFFFFF;
 
-      // desktop
-      @media (min-width: 1024px) {
-        font-size: ${responsive(16)};
-      }
+    // if page needs width & gutters
+    /* width: 1200px;
+    margin: 0 auto;
+    padding-left: 22px; */
+    /* padding-right: 22px; */
+    
+    // tablet
+    @media (min-width: 768px) {
+      font-size: 18px
     }
+    // desktop
+    @media (min-width: 1024px) {
+      font-size: 16px;
+
+      // gutters needed?
+      /* padding-left: 55px; */
+      /* padding-right: 55px; */
+    }
+  }
 `;
 
 export default GlobalStyles;
