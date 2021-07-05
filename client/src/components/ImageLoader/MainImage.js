@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import MainImageSource from "assets/images/Cropped Boot Cut Jeans 1 1.png";
+import MainImageSource from "assets/images/Cropped Boot Cut Jeans 1 1.webp";
 
 const MainImageStyle = styled.img`
   max-height: 475px;
