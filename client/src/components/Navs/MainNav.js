@@ -39,10 +39,15 @@ const MainSideNav = styled.nav`
 const MainNav = () => {
   const { navRowsArray } = useWindowSize();
   const [hideComponent, handleHideComponent] = useHideComponent(true);
+  const handleClick = (e) => {
+    if (e.target.tagName !== "LI" && hideComponent) {
+      handleHideComponent(false);
+    }
+  };
   return (
     <SideNav>
       {/* Always present sidebar nav */}
-      <MainSideNav onClick={handleHideComponent}>
+      <MainSideNav onClick={(e) => handleClick(e)}>
         <GridItemNav key={uuidv4()} />
         <GridItemNav key={uuidv4()}>
           <LinkNav href="/#Home">
@@ -65,7 +70,10 @@ const MainNav = () => {
         ))}
       </MainSideNav>
       {/* Expandable Sub Nav */}
-      <ExpandableSubNav hideComponent={hideComponent} />
+      <ExpandableSubNav
+        hideComponent={hideComponent}
+        handleHideComponent={handleHideComponent}
+      />
     </SideNav>
   );
 };

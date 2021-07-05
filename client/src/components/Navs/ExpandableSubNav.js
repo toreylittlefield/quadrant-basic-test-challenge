@@ -41,14 +41,18 @@ const menuItems = [
   "Tracker",
 ];
 
-const menuItemComponent = (hideComponent, menuItem) => (
-  <GridItemNav DividerAlt key={uuidv4()}>
+const menuItemComponent = (hideComponent, menuItem, handleHideComponent) => (
+  <GridItemNav
+    DividerAlt
+    key={uuidv4()}
+    onClick={() => setTimeout(handleHideComponent, 250)}
+  >
     <LinkNav Dark>{!hideComponent && <TextSpan>{menuItem}</TextSpan>}</LinkNav>
   </GridItemNav>
 );
 
 // eslint-disable-next-line arrow-body-style
-const ExpandableSubNav = ({ hideComponent }) => {
+const ExpandableSubNav = ({ hideComponent, handleHideComponent }) => {
   return (
     <SubNav hideComponent={hideComponent}>
       <GridItemNav DividerAlt key={uuidv4()}>
@@ -61,17 +65,21 @@ const ExpandableSubNav = ({ hideComponent }) => {
         </HeadList>
       </GridItemNav>
       {/* Menu Items */}
-      {menuItems.map((menuItem) => menuItemComponent(hideComponent, menuItem))}
+      {menuItems.map((menuItem) =>
+        menuItemComponent(hideComponent, menuItem, handleHideComponent)
+      )}
     </SubNav>
   );
 };
 
 ExpandableSubNav.propTypes = {
   hideComponent: PropTypes.bool,
+  handleHideComponent: PropTypes.func,
 };
 
 ExpandableSubNav.defaultProps = {
-  hideComponent: PropTypes.bool,
+  hideComponent: false,
+  handleHideComponent: () => true,
 };
 
 export default ExpandableSubNav;
