@@ -9,6 +9,7 @@ import {
   MainImage,
   GridContainer,
   FlexContainer,
+  CustomForm,
 } from "components";
 
 /**
@@ -29,6 +30,7 @@ const MainPage = () => (
         <FlexContainer>
           {/* Classification, Commerical... buttons */}
           <SubNav bgColorLight />
+          <CustomForm />
         </FlexContainer>
       </GridContainer>
       {/* End Main */}
