@@ -21,6 +21,7 @@
 
 ## 📝 Table of Contents
 
+- [View Live Site](#live-site)
 - [Quick Start](#quick-start)
 - [About](#about)
 - [System Architecture](#architecture)
@@ -34,6 +35,10 @@
 - [Acknowledgments](#acknowledgement)
   <!-- - [TODO](../TODO.md) -->
   <!-- - [Contributing](../CONTRIBUTING.md) -->
+
+## ▶️ View Live Site <a name = "live-site"></a>
+
+See the live project @ [https://quadrant-basic-test.netlify.app/](https://quadrant-basic-test.netlify.app/) hosted on Netlify
 
 ## 💨 Quick Start <a name = "quick-start"></a>
 
