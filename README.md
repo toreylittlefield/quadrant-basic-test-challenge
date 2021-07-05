@@ -10,6 +10,7 @@
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/toreylittlefield/quadrant-basic-test-challenge.svg)](https://github.com/toreylittlefield/quadrant-basic-test-challenge/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/toreylittlefield/quadrant-basic-test-challenge.svg)](https://github.com/toreylittlefield/quadrant-basic-test-challenge/pulls)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/75d4747b-85ce-4fa7-8ba5-769a47fac224/deploy-status)](https://app.netlify.com/sites/quadrant-basic-test/deploys)
 
 </div>
 
@@ -39,6 +40,8 @@
 ## ▶️ View Live Site <a name = "live-site"></a>
 
 See the live project @ [https://quadrant-basic-test.netlify.app/](https://quadrant-basic-test.netlify.app/) hosted on Netlify
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/75d4747b-85ce-4fa7-8ba5-769a47fac224/deploy-status)](https://app.netlify.com/sites/quadrant-basic-test/deploys)
 
 ## 💨 Quick Start <a name = "quick-start"></a>
 
