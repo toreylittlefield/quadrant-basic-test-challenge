@@ -9,7 +9,7 @@ const CustomSingleSelect = ({ setFormValues = () => {}, type = "" }) => (
       label="Type"
       value={type}
       onChange={(e) =>
-        setFormValues((prev) => ({ ...prev, name: e.target.value }))
+        setFormValues((prev) => ({ ...prev, type: e.target.value }))
       }
     />
   </div>
