@@ -32,6 +32,21 @@ const HeadList = styled.div`
   padding-left: 15px;
 `;
 
+const menuItems = [
+  "Workflows",
+  "Timeline",
+  "Options",
+  "Designs",
+  "Packs",
+  "Tracker",
+];
+
+const menuItemComponent = (hideComponent, menuItem) => (
+  <GridItemNav DividerAlt key={uuidv4()}>
+    <LinkNav Dark>{!hideComponent && <TextSpan>{menuItem}</TextSpan>}</LinkNav>
+  </GridItemNav>
+);
+
 // eslint-disable-next-line arrow-body-style
 const ExpandableSubNav = ({ hideComponent }) => {
   return (
@@ -45,28 +60,8 @@ const ExpandableSubNav = ({ hideComponent }) => {
           )}
         </HeadList>
       </GridItemNav>
-      <GridItemNav DividerAlt key={uuidv4()}>
-        <LinkNav Dark>
-          {!hideComponent && <TextSpan>Workflows </TextSpan>}
-        </LinkNav>
-      </GridItemNav>
-      <GridItemNav DividerAlt key={uuidv4()}>
-        <LinkNav Dark>
-          {!hideComponent && <TextSpan>Timeline</TextSpan>}
-        </LinkNav>
-      </GridItemNav>
-      <GridItemNav DividerAlt key={uuidv4()}>
-        <LinkNav Dark>{!hideComponent && <TextSpan>Options</TextSpan>}</LinkNav>
-      </GridItemNav>
-      <GridItemNav DividerAlt key={uuidv4()}>
-        <LinkNav Dark>{!hideComponent && <TextSpan>Designs</TextSpan>}</LinkNav>
-      </GridItemNav>
-      <GridItemNav DividerAlt key={uuidv4()}>
-        <LinkNav Dark>{!hideComponent && <TextSpan>Packs</TextSpan>}</LinkNav>
-      </GridItemNav>
-      <GridItemNav DividerAlt key={uuidv4()}>
-        <LinkNav Dark>{!hideComponent && <TextSpan>Tracker</TextSpan>}</LinkNav>
-      </GridItemNav>
+      {/* Menu Items */}
+      {menuItems.map((menuItem) => menuItemComponent(hideComponent, menuItem))}
     </SubNav>
   );
 };
