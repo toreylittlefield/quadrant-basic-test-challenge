@@ -5,6 +5,7 @@ const FlexContainer = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
+  height: fit-content;
   // desktop
   @media (max-width: 1024px) {
   }
