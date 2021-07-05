@@ -56,6 +56,9 @@ const ExpandableSubNav = ({ hideComponent }) => {
         </LinkNav>
       </GridItemNav>
       <GridItemNav DividerAlt key={uuidv4()}>
+        <LinkNav Dark>{!hideComponent && <TextSpan>Options</TextSpan>}</LinkNav>
+      </GridItemNav>
+      <GridItemNav DividerAlt key={uuidv4()}>
         <LinkNav Dark>{!hideComponent && <TextSpan>Designs</TextSpan>}</LinkNav>
       </GridItemNav>
       <GridItemNav DividerAlt key={uuidv4()}>
