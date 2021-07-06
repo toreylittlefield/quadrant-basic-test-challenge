@@ -3,16 +3,15 @@ import React from "react";
 import { TextField } from "@material-ui/core";
 
 const CustomTextField = ({ setFormValues = () => {}, name = "" }) => (
-  <div>
-    <TextField
-      id="standard-name"
-      label="Name"
-      value={name}
-      onChange={(e) =>
-        setFormValues((prev) => ({ ...prev, name: e.target.value }))
-      }
-    />
-  </div>
+  <TextField
+    id="standard-name"
+    style={{ width: 375 }}
+    label="Name"
+    value={name}
+    onChange={(e) =>
+      setFormValues((prev) => ({ ...prev, name: e.target.value }))
+    }
+  />
 );
 
 CustomTextField.defaultProps = {
