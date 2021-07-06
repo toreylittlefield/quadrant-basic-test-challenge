@@ -14,6 +14,14 @@
     "no-process-exit": "off",
     "object-shorthand": "off",
     "class-methods-use-this": "off",
+    "react/jsx-props-no-spreading": [
+      1,
+      {
+        "html": "enforce",
+        "custom": "ignore",
+        "explicitSpread": "enforce"
+      }
+    ],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },
   "settings": {
