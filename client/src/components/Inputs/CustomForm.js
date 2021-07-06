@@ -6,13 +6,13 @@ import CustomAutoCompleteComboBox from "./CustomAutoCompleteComboBox";
 const defaultFormValues = {
   name: "",
   type: "",
-  fabric: "",
+  fabrics: [{ fabric: "new" }, { fabric: "old" }],
   img: "",
 };
 
 const CustomForm = () => {
   const [formValues, setFormValues] = useState(defaultFormValues);
-  const { name, type, fabric } = formValues;
+  const { name, type, fabrics } = formValues;
   return (
     // className={classes.root}
     <form noValidate autoComplete="off">
@@ -21,7 +21,7 @@ const CustomForm = () => {
       <CustomSingleSelect setFormValues={setFormValues} type={type} />
       <CustomAutoCompleteComboBox
         setFormValues={setFormValues}
-        fabric={fabric}
+        fabrics={fabrics}
       />
     </form>
   );
