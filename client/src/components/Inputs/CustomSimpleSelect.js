@@ -1,13 +1,14 @@
 import Proptypes from "prop-types";
 import React from "react";
 import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
+import { v4 as uuidv4 } from "uuid";
 
 const CustomSimpleSelect = ({
   setFormValues = () => {},
   types = [],
   selectedType = "",
 }) => (
-  <FormControl>
+  <FormControl style={{ width: 375 }}>
     <InputLabel id="custom-simple-select-label-types">Type</InputLabel>
     <Select
       labelId="custom-simple-select-label-types"
@@ -18,7 +19,9 @@ const CustomSimpleSelect = ({
       }
     >
       {types.map((typevalue) => (
-        <MenuItem value={typevalue}>{typevalue}</MenuItem>
+        <MenuItem key={uuidv4()} value={typevalue}>
+          {typevalue}
+        </MenuItem>
       ))}
     </Select>
   </FormControl>
