@@ -2,7 +2,7 @@ import Proptypes from "prop-types";
 import React from "react";
 import { TextField } from "@material-ui/core";
 
-const CustomSingleSelect = ({ setFormValues = () => {}, type = "" }) => (
+const CustomSingleSelect = ({ setFormValues = () => {}, type = [] }) => (
   <div>
     <TextField
       id="standard-name"
@@ -17,12 +17,12 @@ const CustomSingleSelect = ({ setFormValues = () => {}, type = "" }) => (
 
 CustomSingleSelect.defaultProps = {
   setFormValues: () => {},
-  type: "",
+  type: [],
 };
 
 CustomSingleSelect.propTypes = {
   setFormValues: Proptypes.func,
-  type: Proptypes.string,
+  type: Proptypes.arrayOf(Proptypes.string),
 };
 
 export default CustomSingleSelect;

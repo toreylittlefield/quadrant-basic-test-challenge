@@ -5,7 +5,7 @@ import CustomAutoCompleteComboBox from "./CustomAutoCompleteComboBox";
 
 const defaultFormValues = {
   name: "",
-  type: "",
+  type: ["new", "old"],
   fabrics: [{ fabric: "new" }, { fabric: "old" }],
   img: "",
 };
