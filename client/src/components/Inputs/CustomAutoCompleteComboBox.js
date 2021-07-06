@@ -12,6 +12,7 @@ const CustomAutoCompleteComboBox = ({
     options={fabrics}
     getOptionLabel={(option) => option.fabric}
     style={{ width: 375 }}
+    autoHighlight
     renderInput={(params) => (
       <TextField
         {...params}
