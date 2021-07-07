@@ -25,7 +25,7 @@ const CustomForm = () => {
         setFormValues={setFormValues}
         inputDataArray={types}
         stateKey="types"
-        id="custom-simple-select-types"
+        id="simple-select-types"
         displayLabel="Type"
       />
 
@@ -34,7 +34,7 @@ const CustomForm = () => {
         setFormValues={setFormValues}
         inputDataArray={fabrics}
         stateKey="fabrics"
-        id="custom-autocomplete-combobox-fabrics"
+        id="combobox-fabrics"
         displayLabel="Fabric"
       />
     </StyledForm>
