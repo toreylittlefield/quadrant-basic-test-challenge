@@ -10,7 +10,12 @@ const defaultFormValues = {
   img: "",
 };
 
-const StyledForm = styled.form``;
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+`;
 
 const CustomForm = () => {
   const [formValues, setFormValues] = useState(defaultFormValues);
