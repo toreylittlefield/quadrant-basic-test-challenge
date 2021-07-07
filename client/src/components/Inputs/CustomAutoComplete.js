@@ -5,7 +5,7 @@ import Autocomplete, {
   createFilterOptions,
 } from "@material-ui/lab/Autocomplete";
 
-const filter = createFilterOptions();
+const filter = createFilterOptions({ ignoreCase: true, trim: true });
 const defaultInputValues = {
   newValue: "",
   inputValue: "",
@@ -23,6 +23,8 @@ const CustomAutoComplete = ({
 
   return (
     <Autocomplete
+      id={id}
+      noOptionsText="No Options Found"
       value={inputValue}
       onChange={(event, val) => {
         if (typeof val === "string") {
@@ -39,7 +41,7 @@ const CustomAutoComplete = ({
           }));
           setFormValues((prev) => ({
             ...prev,
-            [stateKey]: [...prev.types, val.newValue],
+            [stateKey]: [...prev[stateKey], val.newValue],
           }));
         } else {
           setValue((prev) => ({
@@ -67,7 +69,6 @@ const CustomAutoComplete = ({
       selectOnFocus
       clearOnBlur
       handleHomeEndKeys
-      id={id}
       options={inputDataArray}
       getOptionLabel={(option) => {
         // Value selected with enter, right from the input
