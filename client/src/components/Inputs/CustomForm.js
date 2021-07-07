@@ -6,7 +6,6 @@ import CustomAutoComplete from "./CustomAutoComplete";
 const defaultFormValues = {
   name: "",
   types: ["new", "old"],
-  selectedType: "",
   fabrics: ["Kurabo Selvedge Denim", "Blue Denim"],
   img: "",
 };
@@ -20,6 +19,7 @@ const CustomForm = () => {
     <StyledForm noValidate autoComplete="off">
       {/* Textfield Input */}
       <CustomTextField setFormValues={setFormValues} name={name} />
+
       {/* Autocomplete Freesolo Combobox for types i.e "new", "old" ...  */}
       <CustomAutoComplete
         setFormValues={setFormValues}
@@ -27,6 +27,7 @@ const CustomForm = () => {
         stateKey="types"
         id="custom-simple-select-types"
       />
+
       {/* Autocomplete Freesolo Combobox for fabrics */}
       <CustomAutoComplete
         setFormValues={setFormValues}
