@@ -5,76 +5,6 @@ import Autocomplete, {
   createFilterOptions,
 } from "@material-ui/lab/Autocomplete";
 
-// const CustomAutoComplete = ({
-//   setFormValues = () => {},
-//   inputDataArray = [],
-//   stateKey = "",
-// }) => {
-//   const [value, setValue] = useState(null);
-
-//   useEffect(() => {
-//     if (!value) return;
-//     setFormValues((prev) => ({
-//       ...prev,
-//       [stateKey]: [...prev[stateKey], value],
-//     }));
-//   }, [value, stateKey, setFormValues]);
-
-//   return (
-//     <Autocomplete
-//       value={value}
-//       onChange={(event, newValue) => {
-//         if (typeof newValue === "string") {
-//           console.log({ newValue });
-//           setValue(newValue);
-//         } else if (newValue && newValue.inputValue) {
-//           // Create a new value from the user input
-//           setValue(newValue.inputValue);
-//         } else {
-//           setValue(newValue);
-//         }
-//       }}
-//       filterOptions={(options, params) => {
-//         const filtered = filter(options, params);
-
-//         // Suggest the creation of a new value
-//         if (params.inputValue !== "") {
-//           const { inputValue } = params;
-//           filtered.push(inputValue);
-//         }
-//         return filtered;
-//       }}
-//       selectOnFocus
-//       clearOnBlur
-//       handleHomeEndKeys
-//       id="free-solo-with-text-demo"
-//       options={inputDataArray}
-//       getOptionLabel={(option) => {
-//         // Value selected with enter, right from the input
-//         if (typeof option === "string") {
-//           return option;
-//         }
-//         // Add "xxx" option created dynamically
-//         if (option.inputValue) {
-//           return option.inputValue;
-//         }
-//         // Regular option
-//         return option;
-//       }}
-//       renderOption={(option) => option}
-//       style={{ width: 300 }}
-//       freeSolo
-//       renderInput={(params) => (
-//         <TextField
-//           {...params}
-//           label="Free solo with text demo"
-//           variant="outlined"
-//         />
-//       )}
-//     />
-//   );
-// };
-
 const filter = createFilterOptions();
 const defaultInputValues = {
   newValue: "",
@@ -86,6 +16,7 @@ const CustomAutoComplete = ({
   inputDataArray = [],
   stateKey = "",
   id = "",
+  displayLabel = "",
 }) => {
   const [value, setValue] = React.useState(defaultInputValues);
   const { inputValue } = value;
@@ -154,11 +85,7 @@ const CustomAutoComplete = ({
       style={{ width: 300 }}
       freeSolo
       renderInput={(params) => (
-        <TextField
-          {...params}
-          label="Free solo with text demo"
-          variant="outlined"
-        />
+        <TextField {...params} label={displayLabel} variant="outlined" />
       )}
     />
   );
@@ -171,6 +98,7 @@ CustomAutoComplete.defaultProps = {
   inputDataArray: [],
   stateKey: "",
   id: "",
+  displayLabel: "",
 };
 
 CustomAutoComplete.propTypes = {
@@ -178,4 +106,5 @@ CustomAutoComplete.propTypes = {
   inputDataArray: Proptypes.arrayOf(Proptypes.string),
   stateKey: Proptypes.string,
   id: Proptypes.string,
+  displayLabel: Proptypes.string,
 };

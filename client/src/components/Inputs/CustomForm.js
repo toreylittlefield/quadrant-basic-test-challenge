@@ -26,6 +26,7 @@ const CustomForm = () => {
         inputDataArray={types}
         stateKey="types"
         id="custom-simple-select-types"
+        displayLabel="Type"
       />
 
       {/* Autocomplete Freesolo Combobox for fabrics */}
@@ -34,6 +35,7 @@ const CustomForm = () => {
         inputDataArray={fabrics}
         stateKey="fabrics"
         id="custom-autocomplete-combobox-fabrics"
+        displayLabel="Fabric"
       />
     </StyledForm>
   );
