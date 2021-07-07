@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import CustomTextField from "./CustomTextField";
-import CustomSimpleSelect from "./CustomSimpleSelect";
-import CustomAutoCompleteComboBox from "./CustomAutoCompleteComboBox";
+import CustomAutoComplete from "./CustomAutoComplete";
 
 const defaultFormValues = {
   name: "",
   types: ["new", "old"],
   selectedType: "",
-  fabrics: [{ fabric: "new" }, { fabric: "old" }],
+  fabrics: ["Kurabo Selvedge Denim", "Blue Denim"],
   img: "",
 };
 
@@ -16,19 +15,24 @@ const StyledForm = styled.form``;
 
 const CustomForm = () => {
   const [formValues, setFormValues] = useState(defaultFormValues);
-  const { name, types, fabrics, selectedType } = formValues;
+  const { name, types, fabrics } = formValues;
   return (
     <StyledForm noValidate autoComplete="off">
-      {/* Textfield */}
+      {/* Textfield Input */}
       <CustomTextField setFormValues={setFormValues} name={name} />
-      <CustomSimpleSelect
+      {/* Autocomplete Freesolo Combobox for types i.e "new", "old" ...  */}
+      <CustomAutoComplete
         setFormValues={setFormValues}
-        types={types}
-        selectedType={selectedType}
+        inputDataArray={types}
+        stateKey="types"
+        id="custom-simple-select-types"
       />
-      <CustomAutoCompleteComboBox
+      {/* Autocomplete Freesolo Combobox for fabrics */}
+      <CustomAutoComplete
         setFormValues={setFormValues}
-        fabrics={fabrics}
+        inputDataArray={fabrics}
+        stateKey="fabrics"
+        id="custom-autocomplete-combobox-fabrics"
       />
     </StyledForm>
   );
