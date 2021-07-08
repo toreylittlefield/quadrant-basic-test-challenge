@@ -32,17 +32,19 @@ const CustomAutoComplete = ({
 
   // passed setState from props
   const handleSetNewFormValues = (newValue) => {
+    if (newValue.trim() === "") return;
     setFormValues((prev) => ({
       ...prev,
-      [stateKey]: [...prev[stateKey], newValue],
+      [stateKey]: [...prev[stateKey], newValue.trim()],
     }));
   };
 
   // local state
   const handleSetNewValueInput = (newValue) => {
+    if (newValue.trim() === "") return;
     setValue(() => ({
-      newValue: newValue,
-      inputValue: newValue,
+      newValue: newValue.trim(),
+      inputValue: newValue.trim(),
     }));
   };
 
