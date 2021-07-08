@@ -1,10 +1,9 @@
 import Proptypes from "prop-types";
 import React from "react";
-import TextField from "@material-ui/core/TextField";
+import { TextField, Chip, makeStyles } from "@material-ui/core";
 import Autocomplete, {
   createFilterOptions,
 } from "@material-ui/lab/Autocomplete";
-import { makeStyles } from "@material-ui/core";
 
 const filter = createFilterOptions({ ignoreCase: true, trim: true });
 const defaultInputValues = {
@@ -19,6 +18,8 @@ const useStyles = makeStyles({
   },
 });
 
+const multiple = true;
+
 const CustomAutoComplete = ({
   setFormValues = () => {},
   inputDataArray = [],
@@ -27,8 +28,11 @@ const CustomAutoComplete = ({
   displayLabel = "",
 }) => {
   const classes = useStyles();
-  const [value, setValue] = React.useState(defaultInputValues);
-  const { inputValue } = value;
+  const [value, setValue] = React.useState(
+    multiple ? inputDataArray : defaultInputValues
+  );
+
+  // const { inputValue } = value;
 
   // passed setState from props
   const handleSetNewFormValues = (newValue) => {
@@ -50,25 +54,22 @@ const CustomAutoComplete = ({
 
   return (
     <Autocomplete
+      multiple={multiple}
       classes={{
         root: classes.root,
       }}
       id={id}
-      value={inputValue}
-      // onKeyDown={(event, val) => {
-      //   // To handle create new option on Enter key
-      //   if (event.key === "Enter") {
-      //     const filtered = filter(inputDataArray, {
-      //       inputValue: event.target.value,
-      //       getOptionLabel: (option) => option,
-      //     });
-      //     if (filtered.length === 0) {
-      //       handleSetNewValueInput(event.target.value);
-      //       handleSetNewFormValues(event.target.value);
-      //     }
-      //   }
-      // }}
+      value={value.inputValue ? value.inputValue : value}
+      // defaultValue={multiple ? value : defaultInputValues}
       onChange={(event, val) => {
+        // when deleting by chips
+        if (multiple) {
+          setValue(val);
+          setFormValues((prev) => ({
+            ...prev,
+            [stateKey]: [...val],
+          }));
+        }
         if (event.key === "Enter" && val) {
           const filtered = filter(inputDataArray, {
             inputValue: event.target.value,
@@ -96,6 +97,7 @@ const CustomAutoComplete = ({
         const filtered = filter(options, params);
         // Suggest the creation of a new value
         if (
+          !multiple &&
           params.inputValue !== "" &&
           !filtered.find((str) => str === params.inputValue)
         ) {
@@ -115,7 +117,6 @@ const CustomAutoComplete = ({
         // }
         return filtered;
       }}
-      autoSelect
       selectOnFocus
       clearOnBlur
       handleHomeEndKeys
@@ -134,13 +135,34 @@ const CustomAutoComplete = ({
         if (option.addOption) {
           return option.addOption;
         }
-        if (option.editOption) {
-          return option.editOption;
-        }
+        // if (option.editOption) {
+        //   return option.editOption;
+        // }
         return option;
       }}
+      renderTags={
+        multiple
+          ? (tagValue, getTagProps) =>
+              tagValue.map((option, index) => (
+                <Chip
+                  label={option}
+                  color="primary"
+                  {...getTagProps({ index })}
+                />
+              ))
+          : () => {}
+      }
       freeSolo
-      renderInput={(params) => <TextField {...params} label={displayLabel} />}
+      renderInput={
+        multiple
+          ? (params) => {
+              const copyParams = params;
+              copyParams.disabled = true;
+              copyParams.inputProps.disabled = true;
+              return <TextField {...copyParams} label={displayLabel} />;
+            }
+          : (params) => <TextField {...params} label={displayLabel} />
+      }
     />
   );
 };
