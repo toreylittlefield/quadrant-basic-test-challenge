@@ -53,7 +53,34 @@ const CustomAutoComplete = ({
       }}
       id={id}
       value={inputValue}
+      // onKeyDown={(event, val) => {
+      //   // To handle create new option on Enter key
+      //   if (event.key === "Enter") {
+      //     const filtered = filter(inputDataArray, {
+      //       inputValue: event.target.value,
+      //       getOptionLabel: (option) => option,
+      //     });
+      //     if (filtered.length === 0) {
+      //       handleSetNewValueInput(event.target.value);
+      //       handleSetNewFormValues(event.target.value);
+      //     }
+      //   }
+      // }}
       onChange={(event, val) => {
+        if (event.key === "Enter" && val) {
+          const filtered = filter(inputDataArray, {
+            inputValue: event.target.value,
+            getOptionLabel: (option) => option,
+          });
+          if (
+            filtered.length === 0 &&
+            !filtered.find((str) => str === event.target.value)
+          ) {
+            handleSetNewValueInput(event.target.value);
+            handleSetNewFormValues(event.target.value);
+          }
+          return;
+        }
         if (val && val.newValue) {
           // Create a new value from the user input
           handleSetNewValueInput(val.newValue);
@@ -68,7 +95,10 @@ const CustomAutoComplete = ({
       filterOptions={(options, params) => {
         const filtered = filter(options, params);
         // Suggest the creation of a new value
-        if (params.inputValue !== "" && filtered.length === 0) {
+        if (
+          params.inputValue !== "" &&
+          !filtered.find((str) => str === params.inputValue)
+        ) {
           filtered.push({
             newValue: params.inputValue,
             addOption: `Add "${params.inputValue}"`,
@@ -76,6 +106,7 @@ const CustomAutoComplete = ({
         }
         return filtered;
       }}
+      autoSelect
       selectOnFocus
       clearOnBlur
       handleHomeEndKeys
@@ -89,31 +120,7 @@ const CustomAutoComplete = ({
       }}
       renderOption={(option) => (option.addOption ? option.addOption : option)}
       freeSolo
-      renderInput={(params) => (
-        <TextField
-          {...params}
-          label={displayLabel}
-          onKeyDown={(event) => {
-            // Suggest the creation of a new value
-            // if (params.inputValue !== "" && filtered.length === 0) {
-            //   filtered.push({
-            //     newValue: params.inputValue,
-            //     addOption: `Add "${params.inputValue}"`,
-            //   });
-            // }
-            if (event.key === "Enter") {
-              const filtered = filter(inputDataArray, {
-                inputValue: event.target.value,
-                getOptionLabel: (option) => option,
-              });
-              if (filtered.length === 0) {
-                handleSetNewValueInput(event.target.value);
-                handleSetNewFormValues(event.target.value);
-              }
-            }
-          }}
-        />
-      )}
+      renderInput={(params) => <TextField {...params} label={displayLabel} />}
     />
   );
 };
