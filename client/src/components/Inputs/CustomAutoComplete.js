@@ -81,9 +81,7 @@ const CustomAutoComplete = ({
             handleSetNewValueInput(event.target.value);
             handleSetNewFormValues(event.target.value);
           }
-          return;
-        }
-        if (val && val.newValue) {
+        } else if (val && val.newValue) {
           // Create a new value from the user input
           handleSetNewValueInput(val.newValue);
           handleSetNewFormValues(val.newValue);
@@ -106,6 +104,15 @@ const CustomAutoComplete = ({
             addOption: `Add "${params.inputValue}"`,
           });
         }
+        // const findMatch = filtered.find(
+        //   (option) => option === params.inputValue
+        // );
+        // else if (findMatch) {
+        //   filtered.push({
+        //     existingValue: params.inputValue,
+        //     editOption: `Edit "${params.inputValue}"`,
+        //   });
+        // }
         return filtered;
       }}
       autoSelect
@@ -118,9 +125,20 @@ const CustomAutoComplete = ({
         if (option.newValue) {
           return option.newValue;
         }
+        // if (option.existingValue) {
+        //   return option.existingValue;
+        // }
         return option;
       }}
-      renderOption={(option) => (option.addOption ? option.addOption : option)}
+      renderOption={(option) => {
+        if (option.addOption) {
+          return option.addOption;
+        }
+        if (option.editOption) {
+          return option.editOption;
+        }
+        return option;
+      }}
       freeSolo
       renderInput={(params) => <TextField {...params} label={displayLabel} />}
     />
